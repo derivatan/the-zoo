@@ -1,5 +1,5 @@
 .PHONY: all
-all: build run
+all: build run run-migrate
 
 .PHONY: build
 build:
