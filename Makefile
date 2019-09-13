@@ -1,4 +1,14 @@
+.PHONY: all
+all: build run
+
+.PHONY: build
+build:
+	docker-compose build
+
 .PHONY: run
 run:
-	@echo Running...
-	docker-compose up
+	docker-compose up -d
+
+.PHONY: run-migrate
+run-migrate:
+	docker exec the-zoo_php_1 php artisan migrate
